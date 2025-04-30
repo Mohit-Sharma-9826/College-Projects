@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sports Day Registration Form</title>
+    <style>
+        body {
+            background-color: #f0fff0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            color: #006400;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 0 auto;
+            width: 50%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .submit-btn {
+            background-color: #228B22;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 15px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .submit-btn:hover {
+            background-color: #1e7a1e;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sports Day Registration Form</h1>
+
+    <form>
+        <!-- Name -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <!-- Class -->
+        <label for="class">Class:</label>
+        <input type="text" id="class" name="class" required>
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male"> Male
+        <input type="radio" id="female" name="gender" value="Female"> Female
+        <input type="radio" id="other" name="gender" value="Other"> Other
+
+        <!-- Sports Selection -->
+        <label for="sport">Choose a Sport:</label>
+        <select id="sport" name="sport">
+            <option value="100m">100m Race</option>
+            <option value="longjump">Long Jump</option>
+            <option value="cricket">Cricket</option>
+            <option value="football">Football</option>
+            <option value="volleyball">Volleyball</option>
+        </select>
+
+        <!-- Contact Number -->
+        <label for="phone">Contact Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Register" class="submit-btn">
+    </form>
+
+</body>
+</html>

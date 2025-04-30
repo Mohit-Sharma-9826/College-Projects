@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Form with Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            padding: 30px;
+        }
+        h2 {
+            text-align: center;
+            color: #003366;
+        }
+        form {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004080;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Signup Form</h2>
+
+<form onsubmit="return validateForm()">
+    <label>Username:</label>
+    <input type="text" id="username" />
+    <div class="error" id="usernameError"></div>
+
+    <label>Password:</label>
+    <input type="password" id="password" />
+    <div class="error" id="passwordError"></div>
+
+    <label>Confirm Password:</label>
+    <input type="password" id="confirmPassword" />
+    <div class="error" id="confirmPasswordError"></div>
+
+    <label>Phone Number:</label>
+    <input type="text" id="phone" />
+    <div class="error" id="phoneError"></div>
+
+    <button type="submit">Register</button>
+</form>
+
+<script>
+function validateForm() {
+    let valid = true;
+
+    // Get values
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let confirmPassword = document.getElementById("confirmPassword").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+
+    // Clear previous errors
+    document.getElementById("usernameError").innerHTML = "";
+    document.getElementById("passwordError").innerHTML = "";
+    document.getElementById("confirmPasswordError").innerHTML = "";
+    document.getElementById("phoneError").innerHTML = "";
+
+    // Username validation
+    if (username.length < 4) {
+        document.getElementById("usernameError").innerHTML = "Username must be at least 4 characters.";
+        valid = false;
+    }
+
+    // Password validation
+    if (password.length < 6) {
+        document.getElementById("passwordError").innerHTML = "Password must be at least 6 characters.";
+        valid = false;
+    }
+
+    // Confirm password validation
+    if (password != confirmPassword) {
+        document.getElementById("confirmPasswordError").innerHTML = "Passwords do not match.";
+        valid = false;
+    }
+
+    // Phone number validation
+    if (phone.length != 10) {
+        document.getElementById("phoneError").innerHTML = "Phone number must be 10 digits.";
+        valid = false;
+    }
+
+    return valid; // Prevent form submission if any validation fails
+}
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pseudo-Classes and Background Images</title>
+    <style>
+        /* Background Image for entire page */
+        body {
+            background-image: url('https://www.transparenttextures.com/patterns/white-wall-3.png');
+            background-color: #f0f8ff; /* fallback color */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #003366;
+        }
+
+        /* Navigation Menu Example */
+        ul.menu {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        ul.menu li {
+            padding: 10px 20px;
+            background-color: #e6f2ff;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        /* Pseudo-Class: Hover */
+        ul.menu li:hover {
+            background-color: #3399ff;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Pseudo-Class: First Item Style */
+        ul.menu li:first-child {
+            font-weight: bold;
+            border: 2px solid #003366;
+        }
+
+        /* Pseudo-Class: Last Item Style */
+        ul.menu li:last-child {
+            font-style: italic;
+        }
+
+        /* Card Example with Hover Effect */
+        .card {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Pseudo-Class: Card Hover */
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Pseudo-Classes & Background Image Demo</h1>
+
+    <!-- Navigation Menu -->
+    <ul class="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Gallery</li>
+        <li>Contact</li>
+    </ul>
+
+    <!-- A Styled Card with Hover Pseudo-Class -->
+    <div class="card">
+        <h2>Hover Me!</h2>
+        <p>This card grows slightly when you hover over it, thanks to the `:hover` pseudo-class.</p>
+    </div>
+
+</body>
+</html>

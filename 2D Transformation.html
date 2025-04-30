@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Transformation Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5faff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #003366;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: #4CAF50;
+            margin: 20px auto;
+            color: white;
+            line-height: 150px;
+            font-weight: bold;
+            transition: all 0.5s ease;
+        }
+
+        /* Translate */
+        .translate:hover {
+            transform: translate(50px, 20px);
+        }
+
+        /* Rotate */
+        .rotate:hover {
+            transform: rotate(45deg);
+        }
+
+        /* Scale */
+        .scale:hover {
+            transform: scale(1.3);
+        }
+
+        /* Skew */
+        .skew:hover {
+            transform: skew(-20deg, -20deg);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>2D Transformation in CSS</h1>
+
+    <div class="box translate">Translate</div>
+    <div class="box rotate">Rotate</div>
+    <div class="box scale">Scale</div>
+    <div class="box skew">Skew</div>
+
+</body>
+</html>
+
