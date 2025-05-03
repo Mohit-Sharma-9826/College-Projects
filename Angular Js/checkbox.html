@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkbox Value using jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <h2>Select Your Hobbies</h2>
+  
+  <label><input type="checkbox" class="hobby" value="Reading"> Reading</label><br>
+  <label><input type="checkbox" class="hobby" value="Traveling"> Traveling</label><br>
+  <label><input type="checkbox" class="hobby" value="Gaming"> Gaming</label><br>
+  <label><input type="checkbox" class="hobby" value="Cooking"> Cooking</label><br><br>
+
+  <button id="getValues">Get Selected Hobbies</button>
+
+  <p><strong>Selected:</strong> <span id="result"></span></p>
+
+  <script>
+    $(document).ready(function(){
+      $('#getValues').click(function(){
+        var selected = [];
+        $('.hobby:checked').each(function(){
+          selected.push($(this).val());
+        });
+
+        $('#result').text(selected.join(', '));
+      });
+    });
+  </script>
+
+</body>
+</html>

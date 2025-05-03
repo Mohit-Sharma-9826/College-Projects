@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="shoppingApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping List</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input {
+      margin-right: 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+    button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body ng-controller="ShoppingListController">
+  <h1>Shopping List</h1>
+
+  <input type="text" ng-model="itemName" placeholder="Enter item" />
+  <button ng-click="addItem()">Add</button>
+
+  <ul>
+    <li ng-repeat="item in items track by $index">
+      {{ item }}
+      <button ng-click="removeItem($index)">Remove</button>
+    </li>
+  </ul>
+
+  <script>
+    angular.module('shoppingApp', [])
+  .controller('ShoppingListController', function($scope) {
+    $scope.items = [];
+    $scope.itemName = '';
+
+    $scope.addItem = function() {
+      if ($scope.itemName.trim() !== '') {
+        $scope.items.push($scope.itemName.trim());
+        $scope.itemName = '';
+      }
+    };
+
+    $scope.removeItem = function(index) {
+      $scope.items.splice(index, 1);
+    };
+  });
+
+  </script>
+</body>
+</html>
+

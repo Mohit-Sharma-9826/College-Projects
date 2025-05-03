@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Stop Animation</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #4CAF50;
+      margin-top: 100px;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      text-align: center;
+      color: white;
+      align-content: center;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>jQuery Stop Animation Example</h1>
+  <button id="startAnimation">Start Animation</button>
+  <button id="stopAnimation">Stop Animation</button>
+  <button id="stopAndJump">Stop and Jump to End</button>
+  <div class="box">Box</div>
+
+  <script>
+    $(document).ready(function () {
+      const box = $(".box");
+
+      // Start animation on button click
+      $("#startAnimation").click(function () {
+        box.animate({ left: "500px" }, 3000)
+           .animate({ top: "300px" }, 2000)
+           .animate({ left: "50px" }, 3000)
+           .animate({ top: "50px" }, 2000);
+      });
+
+      // Stop animation immediately without clearing the queue
+      $("#stopAnimation").click(function () {
+        box.stop();
+      });
+
+      // Stop animation and jump to the end of the current animation
+      $("#stopAndJump").click(function () {
+        box.stop(true, true);
+      });
+    });
+  </script>
+</body>
+</html>
